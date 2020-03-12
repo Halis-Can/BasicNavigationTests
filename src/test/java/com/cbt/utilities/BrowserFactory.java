@@ -18,7 +18,7 @@ public class BrowserFactory {
         if(browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().version("79.0").setup();
             return new ChromeDriver();
-        }else if(browser.equalsIgnoreCase("firefox")){
+        }else if(browser.equalsIgnoreCase("firefox ")){
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
         }else if (browser.equalsIgnoreCase("Opera")){
