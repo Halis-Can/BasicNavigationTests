@@ -19,7 +19,7 @@ public class TitleVerification2 {
             String title=driver.getTitle();
             title=title.replace(" ","").toLowerCase();
             if (eachPage.contains(title)) {
-                System.out.println("pass ");
+                System.out.println(" pass ");
             } else {
                 System.out.println("fail");
             }

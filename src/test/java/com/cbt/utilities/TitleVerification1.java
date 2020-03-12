@@ -25,7 +25,7 @@ public class TitleVerification1 {
             String actualTitle = driver.getTitle();
 
             if (expected.equals(actualTitle)) {
-                System.out.println("Pass ");
+                System.out.println( " Pass ");
             }
         }
 

@@ -15,7 +15,7 @@ public class BrowserFactory {
      * @return webdriver object
      */
     public static WebDriver getDriver(String browser){
-        if(browser.equalsIgnoreCase("chrome")){
+        if(browser.equalsIgnoreCase(" chrome")){
             WebDriverManager.chromedriver().version("79.0").setup();
             return new ChromeDriver();
         }else if(browser.equalsIgnoreCase("firefox ")){
