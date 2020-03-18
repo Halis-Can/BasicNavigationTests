@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class PTestCases {
+public class PTestCases1_5 {
     private WebDriver driver;
     private String URL="http://practice.cybertekschool.com/";
     private By RegisFormBy=By.linkText("Registration Form");
@@ -48,7 +48,7 @@ public class PTestCases {
    @Test(description = " Verify that programming languages are displayed: c++, java, JavaScript")
    public void verifyLanguageDisplayed(){
      List<WebElement>  warningMessage=driver.findElements(By.className("form-check-input"));
-       for (WebElement eachWarning:  warningMessage           ) {
+       for (WebElement eachWarning:  warningMessage ) {
            Assert.assertTrue(eachWarning.isDisplayed());
        }
    }
@@ -76,8 +76,8 @@ public class PTestCases {
         driver.findElement(PhoneNumBy).sendKeys("804-505-6222");
         driver.findElement(MaleBy).click();
         driver.findElement(BirdDayBy).sendKeys("01/01/1977");
-        //select method need to use!!!
-        BrowserUtils.wait(2);
+        //select method need to use for dropdown!!!
+        BrowserUtils.wait(1);
         Select departmentSelect=new Select(driver.findElement(DepartmentBy));
         departmentSelect.selectByVisibleText("Department of Engineering");
 
@@ -85,13 +85,20 @@ public class PTestCases {
         jobTitleSelect.selectByVisibleText("QA");
 
         driver.findElement(LanguageBy).click();
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(1);
 
         driver.findElement(By.id("wooden_spoon")).click();
         BrowserUtils.wait(1);
-        WebElement warningMessage=driver.findElement(By.tagName("p"));
-        Assert.assertTrue(warningMessage.isDisplayed());
+       // WebElement warningMessage=driver.findElement(By.tagName("p"));
+       // Assert.assertTrue(warningMessage.isDisplayed());
+
+         String expected = "You've successfully completed registration!";
+         String actual = driver.findElement(By.tagName("p")).getText();
+
+        Assert.assertEquals(actual, expected);
+
     }
+
 
     @BeforeMethod
     public void setup(){
