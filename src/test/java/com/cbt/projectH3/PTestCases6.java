@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class PTestCases6 {
 
     private WebDriver driver;
-    private String  URL1="https://www.tempmailaddress.com/";
+    private String  URL1="https://www.fakemail.net/";
     private  String URL2="http://practice.cybertekschool.com/sign_up";
 
 
@@ -54,7 +54,5 @@ public class PTestCases6 {
     public void teardown(){
    driver.quit();
     }
-
-
 
 }
